@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>body{
+        
+        background-color: #d5dd3d;
+    }
+    #grid-wrapper{
+        display:grid;
+        width: 100%;
+        min-height: 1000px;
+        height: min-content;
+        grid-gap: 10px;
+        grid-template-columns: 0.5fr 1fr 0.5fr;
+         
+    }
+    .searchCriteria{
+        margin:  10px 10px 10px 50px;
+        background-color: turquoise;
+        vertical-align: middle;
+        
+    }
+    .searchResults{
+      background: rgb(2,0,36);
+background: linear-gradient(54deg, rgba(2,0,36,1) 0%, rgba(104,104,188,0.7151902997527135) 10%, rgba(0,212,255,1) 100%);
+        border: solid;
+        border-radius: 30px; 
+        background-color: orange;
+        
+    }
+    .ChatBox{
+        border-radius: 30px; 
+        background: rgb(104,169,188);
+background: linear-gradient(54deg, rgba(104,169,188,0.709588058856355) 10%, rgba(0,212,255,1) 100%);
+        float: right;}
+    .search-filter{
+        border-radius: 30px; 
+        border: solid; 
+        
+background: rgb(158,188,104);
+background: linear-gradient(54deg, rgba(158,188,104,0.709588058856355) 23%, rgba(222,177,229,0.647963408996411) 100%);
+    
+         background-color: thistle;}</style>
+    <title>Hobo</title>
+</head>
+<body>
+    <div style="width: auto; height: 50px; border-style: solid; background-color: white;">
+        <a href="index.html" style="font-size: 36px; text-decoration: none;">HOBO.COM</a>
+        <input type="text" placeholder="Search By Name" style="margin-left: 100px; height: 24px; width: 400px;">
+        <button type="submit" id="myBtn">Submit</button>
+        <button type="submit" style="float: right; height: 50px; background-color: violet;">Sign Out</button>
+        <button type="submit" style="float: right; height: 50px;">About Us</button>
+        <button style="border-radius: 100px; float: right; background-color: violet; height: 50px; ">
+            <a href="profile.html" style="text-decoration: none;">Profile</a>
+        </button>
+    </div>
+
+
+<div id="grid-wrapper">
+    <div class="search-filter" >
+        <h1 style="text-align: center;">Search Criteria</h1>
+        <form action="#" style="margin-top: 30px;">
+            <input type="text" class="searchCriteria" placeholder="Location" >
+            <input type="text" class="searchCriteria">
+            <input type="text" class="searchCriteria">
+            <input type="text" class="searchCriteria">
+
+        </form>
+    </div>
+
+    <div class="searchResults">
+        <h1 style="text-align: center;">Search Results</h1>
+       
+    </div>
+    <div class="ChatBox">
+        <h1 style="text-align: center;">Chat Messages</h1>
+    </div>
+</div>
+</body>
+
+</html>

@@ -29,6 +29,11 @@ h1{text-align: center;}
 .ReviewForm{background: lemonchiffon;
 
 }
+.form-el{margin: 5px;}
+#form-container{
+    background-color: aquamarine;
+    padding: 5px;
+}
     </style>
 </head>
 <body>
@@ -46,24 +51,31 @@ h1{text-align: center;}
                 
                 <div class="UserInfo"><h1>User Profile</h1>
                     <h2>Summary</h2>
-                 <ul><li>Name:</li>
+                    <p id="user-summary"></p>
+                 <ul id="ul-el"><li>Name:</li>
                 <li>Surname:</li>
             <li>Email:</li>
             <li>Phone Number:</li> 
         
+          
+             </ul>
             
-            
-            
-            
-            </ul>
         
-        <button>Edit Profile</button>
-        <button>Account Settings</button>
-    <h1>Reviews</h1>
+        <button onclick="openEditForm()">Edit Profile</button>
+        <button onclick="accountForm()">Account Settings</button>
+        <div id="form-container"></div>
+    
+    
+    
+    
+    
+    
+    
+        <h1>Reviews</h1>
 </div>
 <div class="ReviewForm"><h2>Leave a Review</h2>
 <form action="#" method="post"><textarea style="width: 100%; box-sizing: border-box;
-    height: 300px;"></textarea>
+    height: 300px;" ></textarea>
     <input type="radio" name="Star" id="5-star" value="5 Stars">5 Stars
     <input type="radio" name="Star" id="4-star" value ="4 stars">4 Stars
     <br>
@@ -75,6 +87,6 @@ h1{text-align: center;}
 </div>
 
 
-    
+    <script src="editform.js"></script>
 </body>
 </html>

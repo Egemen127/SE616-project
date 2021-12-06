@@ -93,13 +93,13 @@
 	onBlur="if (this.value == '') this.value = 'Name';" />
 			<BR></BR>
 		<p>Password</p>
-		<input type="password" name="password" id="password" title="Password" sytle="margin: 0px;"maxlength="6">
+		<input type="password" name="password" id="password" title="Password" sytle="margin: 0px;"maxlength="20">
 		<br>
 		<input type="submit" value="Submit"></form>
 		<br>
 	
-	<a href="#">Forgot Password</a>
-
+	<button onclick="passwordRecovery()">Forgot Password</button>
+<div id="pwform-container"></div>
 
     </div>
 	
@@ -115,7 +115,7 @@
     <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
     <script src="js/bootstrap.js"></script>
     <script src="js/superfish.js"></script>
-    
+	<script src="editform.js"></script>
     <script type="text/javascript" src="js/jquery.prettyPhoto.js"></script>
     <script type="text/javascript" src="js/custom.js"></script>
 	

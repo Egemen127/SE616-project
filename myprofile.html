@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hobo</title>
+    <style>body{
+        background-color: #d5dd3d;
+       
+    }
+    #grid-wrapper{ display: grid;
+        width: 100%;
+        min-height: 1000px;
+        height: min-content;
+        grid-template-columns: 0.5fr 1fr 0.5fr;
+        grid-gap: 10px;
+        margin-top: 10px;
+
+    }
+.UserInfo{
+   
+    background-color: bisque;
+    border: solid;
+    float: left;
+   
+}
+h1{text-align: center;}
+.ReviewForm{background: lemonchiffon;
+
+}
+.form-el{margin: 5px;}
+#form-container{
+    background-color: aquamarine;
+    padding: 5px;
+}
+    </style>
+</head>
+<body>
+    <div style="width: 100%; height: 50px; border-style: solid; background-color: white;" >
+        <a href="index.html" style="font-size: 36px; text-decoration: none;">HOBO.COM</a>
+        <button type="submit" style="float: right; height: 50px; background-color: violet;">Sign Out</button>
+        <button type="submit" style="float: right; height: 50px;">About Us</button>
+        <button style="border-radius: 100px; float: right; background-color: violet; height: 50px; "><a
+                href="dashboard.html" style="text-decoration: none;">Search</a></button></div>
+                <div id=grid-wrapper>
+                <div id="pp-container"> 
+                    <img style="width: 100px;" src="images/profilepic.jpg" class="profilepic" alt="">
+                </div>
+
+                
+                <div class="UserInfo"><h1>User Profile</h1>
+                    <h2>Summary</h2>
+                    <p id="user-summary"></p>
+                 <ul id="ul-el"><li id="li-name">Name:</li>
+                <li id="li-surname">Surname:</li>
+            <li id="li-email">Email:</li>
+            <li id="li-phone">Phone Number:</li> 
+        
+          
+             </ul>
+            
+        
+        <button onclick="openEditForm()">Edit Profile</button>
+        <button onclick="accountForm()">Account Settings</button>
+        <div id="form-container">
+             <!-- I decided to make name and surname uneditable since it enables users to create profile with fake names -->
+        </div>
+    
+    
+    
+    
+    
+    
+    
+        <h1>Reviews</h1>
+</div>
+<div class="ReviewForm"><h2>Leave a Review</h2>
+<form action="#" method="post"><textarea style="width: 100%; box-sizing: border-box;
+    height: 300px;" ></textarea>
+    <input type="radio" name="Star" id="5-star" value="5 Stars">5 Stars
+    <input type="radio" name="Star" id="4-star" value ="4 Stars">4 Stars
+    <br>
+    <input type="radio" name="Star" id="3-star" value="3 Stars">3 Stars
+    <input type="radio" name="Star" id="2-star" value ="2 Stars">2 Stars
+    <input type="radio" name="Star" id="1-star" value= "1 Star">1 Star
+    <button type="submit">Send</button></form>
+</div>
+</div>
+
+
+    <script src="editform.js"></script>
+</body>
+</html>

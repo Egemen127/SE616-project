@@ -3,8 +3,9 @@ let UlEl = document.getElementById("ul-el")
 let pwFormContainer = document.getElementById("pwform-container")
 
 function openEditForm(){ 
-    formContainer.innerHTML=`<form action=""><input type="text" placeholder="Name" class="form-el" id="name"><br>
-        <input type="text" class="form-el" placeholder="Surname" id="surname"><br>
+    formContainer.innerHTML=`<form action="">
+        <!-- <input type="text" placeholder="Name" class="form-el" id="name"><br>
+         <input type="text" class="form-el" placeholder="Surname" id="surname"><br> -->
         <input type="text"class="form-el" placeholder="Email" id="email"><br>
         <input type="text" class="form-el" placeholder="Phone" id="phone"><br>
         <textarea  class="form-el" placeholder="Summary" style="text-indent: 0px" id="summary" cols="30" rows="10"></textarea>
@@ -74,7 +75,7 @@ function closeForm(){
 
 function passwordRecovery(){
     
-    pwFormContainer.innerHTML=`<input type="text" placeholder="Enter Your Email">
+    pwFormContainer.innerHTML=`<input type="text" placeholder="Enter Your Email" style="margin-left: 300px; margin-top: 5px;">
     <button onclick="fun()">Send a new Password</button>`
 }
 

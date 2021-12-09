@@ -17,7 +17,7 @@
         grid-template-columns: 0.5fr 1fr 0.5fr;
          
     }
-    .searchCriteria{
+    .searchFilter{
         margin:  10px 10px 10px 50px;
         background-color: turquoise;
         vertical-align: middle;
@@ -54,26 +54,29 @@ background: linear-gradient(54deg, rgba(158,188,104,0.709588058856355) 23%, rgba
         <button type="submit" style="float: right; height: 50px; background-color: violet;">Sign Out</button>
         <button type="submit" style="float: right; height: 50px;">About Us</button>
         <button style="border-radius: 100px; float: right; background-color: violet; height: 50px; ">
-            <a href="profile.html" style="text-decoration: none;">Profile</a>
+            <a href="myprofile.html" style="text-decoration: none;">My Profile</a>
         </button>
     </div>
 
 
 <div id="grid-wrapper">
     <div class="search-filter" >
-        <h1 style="text-align: center;">Search Criteria</h1>
+        <h1 style="text-align: center;">Search Filters</h1>
         <form action="#" style="margin-top: 30px;">
-            <input type="text" class="searchCriteria" placeholder="Location" >
-            <input type="text" class="searchCriteria">
-            <input type="text" class="searchCriteria">
-            <input type="text" class="searchCriteria">
+            <input type="text" class="searchFilter" placeholder="Location" >
+            <input type="text" class="searchFilter">
+            <input type="text" class="searchFilter">
+            <input type="text" class="searchFilter">
+          <input type="radio" value="male">
 
         </form>
     </div>
 
     <div class="searchResults">
         <h1 style="text-align: center;">Search Results</h1>
-       
+       <ul>
+           <li><a href="profile.html">Name: <span id="name-result"> Surname: <span id="surname-result"> Location: <span id="location-result"></span></a></li>
+       </ul>
     </div>
     <div class="ChatBox">
         <h1 style="text-align: center;">Chat Messages</h1>

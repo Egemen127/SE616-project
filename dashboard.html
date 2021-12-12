@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/slider.css">
+    <link rel="stylesheet" href="./css/chat.css">
+    <link rel="stylesheet" href="./css/search-results.css">
     <style>body{
         
         background-color: #fbffaa;
@@ -19,9 +22,10 @@
     }
     .searchFilter{
         margin:  10px 10px 10px 50px;
-    background-color: #c9ce6a8b;
+        background-color: #c9ce6a8b;
         vertical-align: middle;
-        
+        width: 75%;
+        position: relative;
     }
     .searchResults{
       background: rgb(2,0,36);
@@ -39,7 +43,8 @@
         border-radius: 30px; 
         border: solid; 
         background: #f9ff818b;
-}</style>
+}
+</style>
     <title>Hobo</title>
 </head>
 <body>
@@ -59,25 +64,187 @@
     <div class="search-filter" >
         <h1 style="text-align: center;">Search Filters</h1>
         <form action="#" style="margin-top: 30px;">
-            <input type="text" class="searchFilter" placeholder="Location" >
-            <input type="text" class="searchFilter">
-            <input type="text" class="searchFilter">
-            <input type="text" class="searchFilter">
-          <input type="radio" value="male">
-
+            <select class="searchFilter" name="location" id="location">
+                <option value="none">LOCATION</option>
+            </select>
+            <div class="slidecontainer searchFilter">
+                <input type="range" min="0" max="10000" value="500" class="slider" id="priceRange">
+                <p>Price: <span id="priceValue"></span></p>
+            </div>
+            <select class="searchFilter" name="rating" id="cars">
+                <option name="rating" value="Rating">Select a Rating</option>
+                <option name="rating" value="Rating5Star">&#11088;&#11088;&#11088;&#11088;&#11088;</option>
+                <option name="rating" value="Rating4Star">&#11088;&#11088;&#11088;&#11088;</option>
+              <option name="rating" value="Rating3Star">&#11088;&#11088;&#11088;</option>
+              <option name="rating" value="Rating2Star">&#11088;&#11088;</option>
+              <option name="rating" value="Rating1Star">&#11088;</option>
+            </select>
+            <input type="text" class="searchFilter" placeholder="Users" name="users" id="users">
+            <!-- <input type="text" class="searchFilter"> -->
+            <!-- <input type="text" class="searchFilter"> -->
+          <!-- <input type="radio" value="male"> -->
         </form>
     </div>
 
     <div class="searchResults">
         <h1 style="text-align: center;">Search Results</h1>
-       <ul>
-           <li><a href="profile.html">Name: <span id="name-result"> Surname: <span id="surname-result"> Location: <span id="location-result"></span></a></li>
+       <ul class="search-result-list">
+           <li>
+                <div class="search-result-item">
+                    <h2>
+                        Lenox Hill Apartments
+                    </h2>
+                    <h3>
+                        <img src="images/man.png" alt="Avatar" class="search-result-avatar">
+                        Mr. Omar
+                        <span class="search-result-rating">&#11088;&#11088;&#11088;&#11088;</span>
+                    </h3>
+                    <h3>Price: $3500</h3>
+                    <h3>State: New York</h3>
+                    <h4>City: New York City</h4>
+                    <h5>Address: 123 Madison Avenue</h5>
+                    <div class="search-result-image">
+                        <img src="images/Apartment.jpg">
+                    </div>
+                    <div>
+                        <a href="profile.html">Name: <span id="name-result"> Surname: <span id="surname-result"> Location: <span id="location-result"></span></a>
+                    </div>
+    
+                </div>
+            </li>
        </ul>
     </div>
     <div class="ChatBox">
         <h1 style="text-align: center;">Chat Messages</h1>
+        <div id="ChatContainer"></div>
+            <div class="chat-container">
+                <img src="images/woman.png" alt="Avatar">
+                <p>Hello. How are you today?</p>
+                <span class="time-right">11:00</span>
+            </div>
+            
+            <div class="chat-container darker">
+                <img src="images/man.png" alt="Avatar" class="right">
+                <p>Hey! I'm fine. Thanks for asking!</p>
+                <span class="time-left">11:01</span>
+            </div>
+            
+            <div class="chat-container">
+                <img src="images/woman.png" alt="Avatar">
+                <p>I am moving to New York city and looking for a roommate.</p>
+                <span class="time-right">11:02</span>
+            </div>
+            
+            <div class="chat-container">
+                <img src="images/woman.png" alt="Avatar">
+                <p> How large is a one bedroom apartment?</p>
+                <span class="time-left">11:05</span>
+            </div>
+            <div class="chat-container darker">
+                <img src="images/man.png" alt="Avatar" class="right">
+                <p>Cool! Here are some pictures and a video room tour.
+                   I hope this helps. 
+                </p>
+                <span class="time-left">11:01</span>
+            </div>
+            <form action="#" style="margin-top: 30px;">
+                <input type="text" class="chat-text-box" placeholder="type a message to send" name="message" id="message">
+                <br>
+                <input type="submit" class="chat-send-button" value="Send">
+            </form>
+        </div>
     </div>
+          <!-- https://www.w3schools.com/howto/howto_css_chat.asp -->
 </div>
+<!-- Insert scripts at end, but before closing BODY tag -->
+<script>
+    var slider = document.getElementById("priceRange");
+    var output = document.getElementById("priceValue");
+    var formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        //minimumFractionDigits: 0, // (this suffices for whole numbers, but will print 2500.10 as $2,500.1)
+        //maximumFractionDigits: 0, // (causes 2500.99 to be printed as $2,501)
+    });
+    
+    output.innerHTML = formatter.format(slider.value);
+    
+    slider.oninput = function() {
+      output.innerHTML = formatter.format(this.value);
+    }
+
+    var usStates = [
+        { name: 'ALABAMA', abbreviation: 'AL'},
+        { name: 'ALASKA', abbreviation: 'AK'},
+        { name: 'AMERICAN SAMOA', abbreviation: 'AS'},
+        { name: 'ARIZONA', abbreviation: 'AZ'},
+        { name: 'ARKANSAS', abbreviation: 'AR'},
+        { name: 'CALIFORNIA', abbreviation: 'CA'},
+        { name: 'COLORADO', abbreviation: 'CO'},
+        { name: 'CONNECTICUT', abbreviation: 'CT'},
+        { name: 'DELAWARE', abbreviation: 'DE'},
+        { name: 'DISTRICT OF COLUMBIA', abbreviation: 'DC'},
+        { name: 'FEDERATED STATES OF MICRONESIA', abbreviation: 'FM'},
+        { name: 'FLORIDA', abbreviation: 'FL'},
+        { name: 'GEORGIA', abbreviation: 'GA'},
+        { name: 'GUAM', abbreviation: 'GU'},
+        { name: 'HAWAII', abbreviation: 'HI'},
+        { name: 'IDAHO', abbreviation: 'ID'},
+        { name: 'ILLINOIS', abbreviation: 'IL'},
+        { name: 'INDIANA', abbreviation: 'IN'},
+        { name: 'IOWA', abbreviation: 'IA'},
+        { name: 'KANSAS', abbreviation: 'KS'},
+        { name: 'KENTUCKY', abbreviation: 'KY'},
+        { name: 'LOUISIANA', abbreviation: 'LA'},
+        { name: 'MAINE', abbreviation: 'ME'},
+        { name: 'MARSHALL ISLANDS', abbreviation: 'MH'},
+        { name: 'MARYLAND', abbreviation: 'MD'},
+        { name: 'MASSACHUSETTS', abbreviation: 'MA'},
+        { name: 'MICHIGAN', abbreviation: 'MI'},
+        { name: 'MINNESOTA', abbreviation: 'MN'},
+        { name: 'MISSISSIPPI', abbreviation: 'MS'},
+        { name: 'MISSOURI', abbreviation: 'MO'},
+        { name: 'MONTANA', abbreviation: 'MT'},
+        { name: 'NEBRASKA', abbreviation: 'NE'},
+        { name: 'NEVADA', abbreviation: 'NV'},
+        { name: 'NEW HAMPSHIRE', abbreviation: 'NH'},
+        { name: 'NEW JERSEY', abbreviation: 'NJ'},
+        { name: 'NEW MEXICO', abbreviation: 'NM'},
+        { name: 'NEW YORK', abbreviation: 'NY'},
+        { name: 'NORTH CAROLINA', abbreviation: 'NC'},
+        { name: 'NORTH DAKOTA', abbreviation: 'ND'},
+        { name: 'NORTHERN MARIANA ISLANDS', abbreviation: 'MP'},
+        { name: 'OHIO', abbreviation: 'OH'},
+        { name: 'OKLAHOMA', abbreviation: 'OK'},
+        { name: 'OREGON', abbreviation: 'OR'},
+        { name: 'PENNSYLVANIA', abbreviation: 'PA'},
+        { name: 'PUERTO RICO', abbreviation: 'PR'},
+        { name: 'RHODE ISLAND', abbreviation: 'RI'},
+        { name: 'SOUTH CAROLINA', abbreviation: 'SC'},
+        { name: 'SOUTH DAKOTA', abbreviation: 'SD'},
+        { name: 'TENNESSEE', abbreviation: 'TN'},
+        { name: 'TEXAS', abbreviation: 'TX'},
+        { name: 'UTAH', abbreviation: 'UT'},
+        { name: 'VERMONT', abbreviation: 'VT'},
+        { name: 'VIRGIN ISLANDS', abbreviation: 'VI'},
+        { name: 'VIRGINIA', abbreviation: 'VA'},
+        { name: 'WASHINGTON', abbreviation: 'WA'},
+        { name: 'WEST VIRGINIA', abbreviation: 'WV'},
+        { name: 'WISCONSIN', abbreviation: 'WI'},
+        { name: 'WYOMING', abbreviation: 'WY' }
+    ];
+
+    var stateSelect = document.getElementById('location');
+
+    for(var i = 0; i < usStates.length; i++) {
+        var option = document.createElement("option");
+        option.name = "location";
+        option.text = usStates[i].name;
+        option.value = usStates[i].abbreviation;
+        stateSelect.add(option);
+    }
+    // Source: https://stackoverflow.com/questions/31456637/creating-drop-down-menu-of-states-using-array
+</script>
 </body>
 
 </html>

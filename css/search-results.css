@@ -1,0 +1,20 @@
+.search-result-image img {
+    height: 256px;
+}
+
+.search-result-list {
+    list-style-type: none;
+}
+
+.search-result-item {
+    background-color: rgb(193, 118, 236);
+    width: 90%;
+    padding: 10px;
+}
+
+.search-result-avatar {
+    margin-left: 5px;
+    margin-right: 5px;
+    height: 32px;
+    width: 32px;
+}

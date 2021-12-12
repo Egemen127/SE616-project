@@ -8,7 +8,10 @@ function openEditForm(){
          <input type="text" class="form-el" placeholder="Surname" id="surname"><br> -->
         <input type="text"class="form-el" placeholder="Email" id="email"><br>
         <input type="text" class="form-el" placeholder="Phone" id="phone"><br>
-        <textarea  class="form-el" placeholder="Summary" style="text-indent: 0px" id="summary" cols="30" rows="10"></textarea>
+        <textarea  class="form-el" placeholder="Summary" style="text-indent: 0px" id="summary" cols="30" rows="10"></textarea><br>
+        
+  <label for="myfile">Select a profile picture:</label>
+  <input type="file" id="myfile" name="myfile"><br>
         <button onclick="applyChanges()">APPLY</button>
         <button onclick="closeForm()">CANCEL</button>
         
